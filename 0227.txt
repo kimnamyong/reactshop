@@ -152,7 +152,9 @@ useEffect(callback,[])
 
 
 frontend->vue(강좌)->16번게시판
+리액트동작원리
 
+cd ..
 
 
 

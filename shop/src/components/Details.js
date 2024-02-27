@@ -42,7 +42,9 @@ const Details = (props) => {
     console.log("업데이트중...")
   },[inputData])
 
- 
+ let 재고화면=( <div className="my-alert2">
+                  <p>재고가 얼마 남지 않았습니다.</p>
+                </div>)
   
   return (
     <div className="container">
@@ -53,10 +55,7 @@ const Details = (props) => {
       </박스>
       <input onChange={(e)=>{setInputData(e.target.value)}} />
       {
-        alert===true 
-        ? ( <div className="my-alert2">
-            <p>재고가 얼마 남지 않았습니다.</p>
-           </div>) : null
+        alert===true  ? 재고화면: null
       }
      
 
