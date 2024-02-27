@@ -29,6 +29,16 @@ Navbars
 
 src->components->NavBar.js
 
+function NavBar(){
+  return( )
+}
+
+export -> import {함수명}
+export default -> import 함수명
+
+신발사진 아무거나 복사해서
+public 폴더에 붙이기
+
 
 
 
