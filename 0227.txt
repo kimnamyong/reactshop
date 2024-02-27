@@ -1,0 +1,36 @@
+react shopping mall
+
+리액트(React)강좌
+23번게시판
+
+쇼핑몰프로젝트와 Boostrap 설치
+
+reactprj  폴더
+
+file->open->reactprj
+
+npx create-react-app shop
+
+cd shop
+npm start
+
+react-boostrap
+
+npm install react-bootstrap@next bootstrap@5.1.0
+yarn add react-bootstrap@next bootstrap@5.1.0
+
+npm install react-bootstrap bootstrap
+
+react-boostrap 검색->홈페이지접속
+get start -> link 태그 복사->index.html 복붙
+public->index.html
+
+Navbars
+
+src->components->NavBar.js
+
+
+
+
+
+
