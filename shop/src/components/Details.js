@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import "../Details.scss";
+import { useEffect, useState } from "react";
 
 let DIV = styled.div`
   padding: 20px;
@@ -19,16 +20,30 @@ let 제목 = styled.h4`
 `;
 
 const Details = (props) => {
-  let history = useHistory();
-  console.log(useParams());
+  let history = useHistory(); 
   let { id } = useParams(); // {id:2}
   //let id=useParams().id;
   // let 찾은상품=props.shoes.find(function(상품){
   //   return 상품.id===parseInt(id);
   // });
   let 찾은상품 = props.shoes.find((상품) => 상품.id === parseInt(id));
+  let [alert, alert변경]=useState(true);
+  let [inputData, setInputData]=useState("")
 
-  //console.log(찾은상품)
+  useEffect(()=>{
+    let 타이머=setTimeout(()=>{
+      alert변경(false)
+      console.log(alert)
+    },3000);
+    return ()=>{ clearTimeout(타이머)}
+  },[alert]);
+
+  useEffect(()=>{
+    console.log("업데이트중...")
+  },[inputData])
+
+ 
+  
   return (
     <div className="container">
       <박스>
@@ -36,9 +51,14 @@ const Details = (props) => {
           Detail(상세페이지)
         </제목>
       </박스>
-      <div className="my-alert2">
-        <p>재고가 얼마 남지 않았습니다.</p>
-      </div>
+      <input onChange={(e)=>{setInputData(e.target.value)}} />
+      {
+        alert===true 
+        ? ( <div className="my-alert2">
+            <p>재고가 얼마 남지 않았습니다.</p>
+           </div>) : null
+      }
+     
 
       <div className="row">
         <div className="col-md-6">
