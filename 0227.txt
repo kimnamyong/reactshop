@@ -63,11 +63,21 @@ npm install react-router-dom
 index.js
 App.js
 
-
 npm install react-router-dom@5.3.0
 
+components->Home.js
 
+https://github.com/kimnamyong/reactshop
 
+App.js
+
+function Home(props){
+ return(
+   app.js에서 Route path="/"
+  잘라내기 붙이기(잘붙)
+ )
+}
+export default Home;
 
 
 

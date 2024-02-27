@@ -6,8 +6,8 @@ function Home(props) {
     console.log(props)
   return (
     <Route path="/" exact>
-      <Container className="background">
-        <h1>20% Season Off</h1>
+      <Container className="background mt-4">
+        <h1>20% Season Off(파격세일)</h1>
         <p> welcome to my shopMall !!!</p>
       </Container>
 
