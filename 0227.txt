@@ -39,6 +39,26 @@ export default -> import 함수명
 신발사진 아무거나 복사해서
 public 폴더에 붙이기
 
+KDT수업자료->13번게시판
+사진있음
+
+components->data.js
+components->Card.js
+
+
+{ JSX문법 }
+if문 , for 사용안함
+
+컴포넌트
+데이터바인딩
+반복문
+라우팅
+////////////////
+
+
+
+
+
 
 
 
