@@ -2,16 +2,18 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 const Details = (props) => {
   let history=useHistory();
-  let {id}=useParams();
+  //console.log(useParams().id)
+    let {id}=useParams(); // {id:2}
+    //let id=useParams().id;  
   let 찾은상품=props.shoes.find(function(상품){   
-    return 상품.id==id;
+    return 상품.id===parseInt(id);
   });
-  console.log(찾은상품)
+  //console.log(찾은상품)
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <img src={`/shoes${id}.jpg`} 
+          <img src={`/shoes${parseInt(id)+1}.jpg`} 
           width="100%" alt="" />
         </div>
         <div className="col-md-6 mt-4">
@@ -26,7 +28,6 @@ const Details = (props) => {
           <button className="btn btn-info"
           onClick={()=>{ history.push("/") }}
           >홈으로하기</button>
-
         </div>
       </div>
     </div>
