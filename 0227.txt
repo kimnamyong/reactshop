@@ -115,12 +115,16 @@ Redux
 useRef, useMemo
 
 
+npm install styled-components
 
 
+<DIV color="gold">
 
+</DIV>
 
+npm install sass
 
-
+src-> Detail.scss
 
 
 

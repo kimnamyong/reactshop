@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import "../Details.scss";
 
 let DIV = styled.div`
   padding: 20px;
@@ -35,6 +36,9 @@ const Details = (props) => {
           Detail(상세페이지)
         </제목>
       </박스>
+      <div className="my-alert2">
+        <p>재고가 얼마 남지 않았습니다.</p>
+      </div>
 
       <div className="row">
         <div className="col-md-6">
