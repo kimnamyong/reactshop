@@ -81,7 +81,21 @@ export default Home;
 
 Details.js
 
+http://localhost:3000/detail/1
+http://localhost:3000/detail/0
+http://localhost:3000/detail/2
 
+parameter
+
+useParams()
+console.log(useParams())
+{ id: 2 }
+
+id=useParams().id
+id=2
+
+{id}=useParams();
+id=2
 
 
 
