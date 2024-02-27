@@ -97,9 +97,22 @@ id=2
 {id}=useParams();
 id=2
 
+npm install history
+
+git init
+git commit -m "커밋 메시지"
+git remote add origin <GitHub 저장소 URL>
+git push -u origin master
 
 
-
+styled component
+useEffect
+React Hooks
+ajax 요청-axios
+Context API
+Redux
+장바구니 기능완성
+useRef, useMemo
 
 
 

@@ -1,6 +1,6 @@
 
 function Card(props) {
-  const {shoe,i}=props;
+  const {shoes,i}=props;
 
   return (
     <div className="col-md-4">
@@ -9,7 +9,7 @@ function Card(props) {
       {/* <img src={`shoes${(props.i+1)}.jpg`} width="100%" alt="" /> */}
       </a>
 
-      <h4>{props.shoes.title}</h4>
+      <h4>{shoes.title}</h4>
       <p>
         {props.shoes.content} &{props.shoes.price}원
       </p>
