@@ -5,6 +5,8 @@ import "./App.css";
 
 import { Route } from "react-router-dom";
 import Home from "./components/Home";
+import Details from "./components/Details";
+import { Switch } from "react-router-dom";
 
 function App() {
   let [shoes, shoes변경] = useState(Data);
@@ -12,25 +14,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
-      <Home shoes={shoes} />  
-
-      <Route path="/detail">
-       <div className="container">
-        <div className="row">
-         <div className="col-md-6">
-          <img src="shoes1.jpg" width="100%" alt="" />
-         </div>
-         <div className="col-md-6 mt-4">
-            <h4 className="pt-5">상품명</h4>
-            <p>상품설명</p>
-            <p>12000원</p>
-            <button className="btn btn-primary">주문하기</button>
-          </div>   
-        </div>
-       </div>
-      </Route>
-
+      <Switch>
+        <Route path="/" exact>
+          <Home shoes={shoes} />
+        </Route>
+        <Route path="/detail" exact>
+          <Details />
+        </Route>
+        <Route path="/detail/:id" exact>
+          <Details shoes={shoes}/>
+        </Route>
+      </Switch>
     </div>
   );
 }
