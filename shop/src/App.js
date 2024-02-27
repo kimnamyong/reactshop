@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import Data from "./components/data";
 import "./App.css";
 import Card from "./components/Card";
+import { Route } from "react-router-dom";
 
 function App() {
   let [shoes, shoes변경] = useState(Data);
@@ -11,20 +12,39 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Container className="background">
-        <h1>20% Season Off</h1>
-        <p> welcome to my shopMall !!!</p>
-      </Container>
-      <div className="container">
-        <div className="row">
-          {shoes.map((a, i) => {
-            return <Card shoes={shoes[i]} i={i} key={i} />;
-          })}
+
+      <Route path="/" exact>
+        <Container className="background">
+          <h1>20% Season Off</h1>
+          <p> welcome to my shopMall !!!</p>
+        </Container>
+
+        <div className="container">
+          <div className="row">
+            {shoes.map((a, i) => {
+              return <Card shoes={shoes[i]} i={i} key={i} />;
+            })}
+          </div>
         </div>
-      </div>
+      </Route>
+
+      <Route path="/detail">
+       <div className="container">
+        <div className="row">
+         <div className="col-md-6">
+          <img src="shoes1.jpg" width="100%" alt="" />
+         </div>
+         <div className="col-md-6 mt-4">
+            <h4 className="pt-5">상품명</h4>
+            <p>상품설명</p>
+            <p>12000원</p>
+            <button className="btn btn-primary">주문하기</button>
+          </div>   
+        </div>
+       </div>
+      </Route>
+
     </div>
   );
 }
 export default App;
-
-
