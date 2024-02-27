@@ -18,7 +18,7 @@ function App() {
       <div className="container">
         <div className="row">
           {shoes.map((a, i) => {
-            return <Card shoes={shoes[i]} />;
+            return <Card shoes={shoes[i]} i={i} />;
           })}
         </div>
       </div>
@@ -31,7 +31,8 @@ export default App;
 function Card(props) {
   return (
     <div className="col-md-4">
-      <img src="shoes1.jpg" width="100%" alt="" />
+      <img src={"shoes"+(props.i+1)+".jpg"} 
+      width="100%" alt="" />
       <h4>{props.shoes.title}</h4>
       <p>
         {props.shoes.content} &{props.shoes.price}원
