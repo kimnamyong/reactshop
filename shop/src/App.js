@@ -11,20 +11,35 @@ import axios from "axios";
 
 function App() {
   let [shoes, setShoes] = useState(Data);
-  let getUrl="https://codingapple1.github.io/shop/data2.json";
+  let getUrl = "https://codingapple1.github.io/shop/data2.json";
+  let [show, setShow] = useState(false);
 
+  const loading = () => {
+    return (
+      <div>
+        <h2> loading.....중</h2>
+      </div>
+    );
+  };
+  const loading2 = (
+  <div><h2>로딩중...</h2></div>
+  );
   const getData = () => {
     axios
       .get(getUrl)
       .then((result) => {
         // console.log(result.data);
-        setShoes([...shoes, ...result.data])
+        setShow(true)
+        setShoes([...shoes, ...result.data]);
+        setTimeout(()=>{
+          setShow(false)
+        },1000)
       })
       .catch(() => {
         console.log("접속실패....");
+        setShow(true)
       });
   };
-
   return (
     <div className="App">
       <NavBar />
@@ -39,6 +54,9 @@ function App() {
           <Details shoes={shoes} />
         </Route>
       </Switch>
+
+      {show ? loading() : null}
+      {show ? loading2 : null}
 
       <button className="btn btn-primary" onClick={getData}>
         더보기(axios)
