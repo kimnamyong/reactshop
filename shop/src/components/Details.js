@@ -70,7 +70,9 @@ const Details = (props) => {
             <p>{찾은상품.content}</p>
             <p>{찾은상품.price}원</p>
             <hr></hr>
-            <button className="btn btn-primary">주문하기</button>
+            <button className="btn btn-primary"
+            onClick={()=>{props.재고변경([9,10,11])}}
+            >주문하기</button>
             <button
               className="btn btn-danger"
               onClick={() => {

@@ -61,7 +61,8 @@ function App() {
           <Details />
         </Route>
         <Route path="/detail/:id" exact>
-          <Details shoes={shoes} 재고={재고} />
+          <Details shoes={shoes} 
+          재고={재고} 재고변경={재고변경} />
         </Route>
       </Switch>
     </div>
