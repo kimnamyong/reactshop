@@ -1,10 +1,27 @@
 //import { Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Card from "./Card";
-
+import axios from "axios";
 
 function Home(props) {
-  
+  let getUrl = "https://codingapple1.github.io/shop/data2.json";
+  const getData = () => {
+    axios
+      .get(getUrl)
+      .then((result) => {
+        // console.log(result.data);
+        //setShow(true);
+        props.setShoes([...props.shoes, ...result.data]);
+        // setTimeout(() => {
+        //   setShow(false);
+        // }, 1000);
+      })
+      .catch(() => {
+        console.log("접속실패....");
+        //setShow(true);
+      });
+  };
+
   return (
     <>
       <Container className="background mt-4">
@@ -18,6 +35,12 @@ function Home(props) {
           })}
         </div>
        
+        <button className="btn btn-primary" 
+          onClick={getData}>
+            더보기(axios)
+          </button>
+
+
         {/* <button className="btn btn-primary" 
          onClick={()=>{ 
             axios.get("https://codingapple1.github.io/shop/data2.json")

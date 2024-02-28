@@ -55,8 +55,29 @@ App.js에
 
 Detail내에 info 컴포넌트 생성
 
-App->Details->Info
-재고                재고
+App->   Details  ->  Info
+재고          재고      재고
+재고변경  재고변경 ->재고가 변경
+
+
+
+axios 버튼과 함수및 변수를 Home 컴포넌트로
+이동하고
+
+App에서 Home으로 setShoes를 props로
+전송해서 바꿔보자.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
