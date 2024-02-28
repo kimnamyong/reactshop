@@ -67,6 +67,14 @@ axios 버튼과 함수및 변수를 Home 컴포넌트로
 App에서 Home으로 setShoes를 props로
 전송해서 바꿔보자.
 
+Context API
+Redux
+//////////////////
+
+컨텍스트
+부모에서 모든 자식으로 데이터 전달
+
+
 
 
 

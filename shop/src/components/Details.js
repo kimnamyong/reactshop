@@ -2,7 +2,8 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import "../Details.scss";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { 재고Context } from "../App";
 
 let DIV = styled.div`
   padding: 20px;
@@ -22,6 +23,7 @@ let 제목 = styled.h4`
 const Details = (props) => {
   let history = useHistory(); 
   let { id } = useParams(); // {id:2}
+  let 재고=useContext(재고Context)
   //let id=useParams().id;
   // let 찾은상품=props.shoes.find(function(상품){
   //   return 상품.id===parseInt(id);
@@ -93,7 +95,8 @@ const Details = (props) => {
           </div>
         </DIV>
       </div>
-      <Info 재고={props.재고}></Info>      
+      {/* <Info 재고={props.재고}></Info>       */}
+      <Info 재고={재고}></Info>      
     </div>
   );
 };

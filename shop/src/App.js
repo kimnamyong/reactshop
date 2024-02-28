@@ -7,43 +7,31 @@ import { Route } from "react-router-dom";
 import Home from "./components/Home";
 import Details from "./components/Details";
 import { Switch } from "react-router-dom";
+import { useContext } from "react";
+
+export const 재고Context = React.createContext();
 
 function App() {
   let [shoes, setShoes] = useState(Data);
 
-  let [show, setShow] = useState(false);
-  let [재고, 재고변경]=useState([10,11,12])
-
-  const loading = () => {
-    return (
-      <div>
-        <h2> loading.....중</h2>
-      </div>
-    );
-  };
-  const loading2 = (
-    <div>
-      <h2>로딩중...</h2>
-    </div>
-  );
+  let [재고, 재고변경] = useState([10, 11, 12,5,3,2,1,2]);
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home shoes={shoes} setShoes={setShoes} />
-          {show ? loading() : null}
-          {show ? loading2 : null}
-        
-
+          <재고Context.Provider value={재고}>
+            <Home shoes={shoes} setShoes={setShoes} />
+          </재고Context.Provider>
         </Route>
         <Route path="/detail" exact>
           <Details />
         </Route>
         <Route path="/detail/:id" exact>
-          <Details shoes={shoes} 
-          재고={재고} 재고변경={재고변경} />
+          <재고Context.Provider value={재고}>
+            <Details shoes={shoes} 재고={재고} 재고변경={재고변경} />
+          </재고Context.Provider>
         </Route>
       </Switch>
     </div>
