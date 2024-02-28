@@ -13,6 +13,7 @@ function App() {
   let [shoes, setShoes] = useState(Data);
   let getUrl = "https://codingapple1.github.io/shop/data2.json";
   let [show, setShow] = useState(false);
+  let [재고, 재고변경]=useState([10,11,12])
 
   const loading = () => {
     return (
@@ -22,45 +23,47 @@ function App() {
     );
   };
   const loading2 = (
-  <div><h2>로딩중...</h2></div>
+    <div>
+      <h2>로딩중...</h2>
+    </div>
   );
   const getData = () => {
     axios
       .get(getUrl)
       .then((result) => {
         // console.log(result.data);
-        setShow(true)
+        setShow(true);
         setShoes([...shoes, ...result.data]);
-        setTimeout(()=>{
-          setShow(false)
-        },1000)
+        setTimeout(() => {
+          setShow(false);
+        }, 1000);
       })
       .catch(() => {
         console.log("접속실패....");
-        setShow(true)
+        setShow(true);
       });
   };
+
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route exact path="/">
           <Home shoes={shoes} />
+          {show ? loading() : null}
+          {show ? loading2 : null}
+
+          <button className="btn btn-primary" onClick={getData}>
+            더보기(axios)
+          </button>
         </Route>
         <Route path="/detail" exact>
           <Details />
         </Route>
         <Route path="/detail/:id" exact>
-          <Details shoes={shoes} />
+          <Details shoes={shoes} 재고={재고} />
         </Route>
       </Switch>
-
-      {show ? loading() : null}
-      {show ? loading2 : null}
-
-      <button className="btn btn-primary" onClick={getData}>
-        더보기(axios)
-      </button>
     </div>
   );
 }

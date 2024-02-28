@@ -91,7 +91,14 @@ const Details = (props) => {
           </div>
         </DIV>
       </div>
+      <Info 재고={props.재고}></Info>      
     </div>
   );
 };
 export default Details;
+
+function Info(props){
+  return (
+    <p>재고 : {props.재고[0]}</p>
+  )
+}

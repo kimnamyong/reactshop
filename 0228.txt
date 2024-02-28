@@ -46,6 +46,21 @@ append
 git hub 
 https://github.com/kimnamyong/reactshop
 
+버튼을 잘라내기
+app.js에 올린다.
+
+App.js에 
+재고 변수 선언
+
+
+Detail내에 info 컴포넌트 생성
+
+App->Details->Info
+재고                재고
+
+
+
+
 
 
 
