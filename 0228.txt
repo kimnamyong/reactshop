@@ -27,10 +27,21 @@ object형태로 변환해야한다.
 JSON.parse(JSON.stringify(data))
 
 
+https://codingapple1.github.io/shop/data2.json
 
+<div></div>
+<>
+</>
+onclick={JSX}
 
+append
 
+기존배열을 복사- deepcopy
+구조분해할당 문법 사용
+배열에 추가?
+상태변수를 변경한다.
 
+리팩토링 - refactoring
 
 
 
