@@ -8,7 +8,6 @@ import Home from "./components/Home";
 import Details from "./components/Details";
 import { Switch } from "react-router-dom";
 
-
 function App() {
   let [shoes, setShoes] = useState(Data);
 
@@ -27,7 +26,6 @@ function App() {
       <h2>로딩중...</h2>
     </div>
   );
-
 
   return (
     <div className="App">
