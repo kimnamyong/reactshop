@@ -1,0 +1,40 @@
+react shopping mall
+
+frontend
+리액트(React)강좌
+34번게시판
+ajax 실습
+axios
+
+workspace 작업공간폴더
+reactprj-blog
+          -shop
+          -ex01
+
+cd shop
+npm start
+
+
+npm install axios
+yarn add axios
+
+axios
+json을 object 형태로 알아서
+바꿔준다.
+
+fetch는 json그대로 가져온다.
+object형태로 변환해야한다.
+JSON.parse(JSON.stringify(data))
+
+
+
+
+
+
+
+
+
+
+
+
+
