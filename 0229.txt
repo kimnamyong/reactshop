@@ -57,7 +57,35 @@ Detail 페이지에
 
 Vue강좌-> 18번게시판
 입력폼
-test폴더에서
+test폴더에서 실습
+
+
+
+https://github.com/kimnamyong/reactshop
+
+
+index.js
+React.StrictMode  삭제
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
