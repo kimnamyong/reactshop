@@ -21,7 +21,7 @@ function Card(props) {
       <p>
         {props.shoes.content} &{props.shoes.price}원
       </p>
-      {재고[i] }
+     <span> 남은 수량 : {재고[i] }</span>
       
     </div>
   );

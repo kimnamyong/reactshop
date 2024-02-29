@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import Data from "./components/data";
+import Data2 from "./components/data2";
 import "./App.css";
 
 import { Route } from "react-router-dom";

@@ -67,8 +67,14 @@ https://github.com/kimnamyong/reactshop
 index.js
 React.StrictMode  삭제
 
+App.js
+Cart.js
+Details.js
 
+Card.js 
+index.js
 
+npm install redux react-redux
 
 
 

@@ -39,7 +39,6 @@ function reducer(state = initial, action) {
       copy.push(action.데이터);
       return copy;
     }
-
   }else if(action.type === "수량증가") {    
     let copy = [...state];
     console.log(copy)

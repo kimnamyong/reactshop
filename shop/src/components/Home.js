@@ -4,7 +4,7 @@ import Card from "./Card";
 import axios from "axios";
 
 function Home(props) {
-  let getUrl = "https://codingapple1.github.io/shop/data2.json";
+  let getUrl = "data2.json";
   let [show, setShow] = useState(false);
 
   const loading = () => {
