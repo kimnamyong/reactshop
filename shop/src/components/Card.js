@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 function Card(props) {
   const {shoes,i}=props;
   let 재고=useContext(재고Context);
-console.log(재고)
+
   return (
     <div className="col-md-4">
       <a href={"/detail/"+i}>

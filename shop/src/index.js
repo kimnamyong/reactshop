@@ -25,9 +25,14 @@ function reducer2(state=alert초기값, action){
 }
 
 function reducer(state = initial, action) {
-  console.log(action)
-  if (action.type === "수량증가") {
+  if(action.type==="항목추가"){
+    let copy = [...state]; 
+    copy.push(action.payload);
+    return copy;
+
+  }else if (action.type === "수량증가") {    
     let copy = [...state];
+    console.log(copy)
     copy[action.id].quan++;
     return copy;
   } else if (action.type === "수량감소") {
@@ -47,16 +52,14 @@ let store = createStore(combineReducers({reducer, reducer2}));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

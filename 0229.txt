@@ -36,10 +36,41 @@ Subscribe
 ////////////////////////
 Angular , React, Vue
 
+Redux Store에서 
+state 전송하기
+
 reducer와 dispatch
-상태변경과 전송
+상태변경과 상태변수전송
 
 reducer 추가하기
+combineReducers
+
+useSelector, useDispatch
+React Hook
+
+react redux
+react effector
+react recoil
+
+Detail 페이지에 
+장바구니 추가 버튼 만들기
+
+Vue강좌-> 18번게시판
+입력폼
+test폴더에서
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

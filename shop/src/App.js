@@ -33,7 +33,7 @@ function App() {
             <Details shoes={shoes} 재고={재고} 재고변경={재고변경} />
           </재고Context.Provider>
         </Route>
-        <Route path="/cart">
+        <Route path="/cart" exact>
           <Cart />
         </Route>
 

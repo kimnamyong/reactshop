@@ -4,6 +4,8 @@ import styled from "styled-components";
 import "../Details.scss";
 import { useContext, useEffect, useState } from "react";
 import { 재고Context } from "../App";
+import {connect, useSelector, useDispatch } from "react-redux";
+import Cart from "./Cart";
 
 let DIV = styled.div`
   padding: 20px;
@@ -20,34 +22,41 @@ let 제목 = styled.h4`
   color: ${(props) => props.색상};
 `;
 
-const Details = (props) => {
-  let history = useHistory(); 
+function Details (props){
+  let state=useSelector((state)=>state)
+  let dispatch = useDispatch();
+
+  let history = useHistory();
   let { id } = useParams(); // {id:2}
-  let 재고=useContext(재고Context)
+  let 재고 = useContext(재고Context);
   //let id=useParams().id;
   // let 찾은상품=props.shoes.find(function(상품){
   //   return 상품.id===parseInt(id);
   // });
   let 찾은상품 = props.shoes.find((상품) => 상품.id === parseInt(id));
-  let [alert, alert변경]=useState(true);
-  let [inputData, setInputData]=useState("")
+  let [alert, alert변경] = useState(true);
+  let [inputData, setInputData] = useState("");
 
-  useEffect(()=>{
-    let 타이머=setTimeout(()=>{
-      alert변경(false)
-      console.log(alert)
-    },3000);
-    return ()=>{ clearTimeout(타이머)}
-  },[alert]);
+  useEffect(() => {
+    let 타이머 = setTimeout(() => {
+      alert변경(false);
+      console.log(alert);
+    }, 3000);
+    return () => {
+      clearTimeout(타이머);
+    };
+  }, [alert]);
 
-  useEffect(()=>{
-    console.log("업데이트중...")
-  },[inputData])
+  useEffect(() => {
+    console.log("업데이트중...");
+  }, [inputData]);
 
- let 재고화면=( <div className="my-alert2">
-                  <p>재고가 얼마 남지 않았습니다.</p>
-                </div>)
-  
+  let 재고화면 = (
+    <div className="my-alert2">
+      <p>재고가 얼마 남지 않았습니다.</p>
+    </div>
+  );
+
   return (
     <div className="container">
       <박스>
@@ -55,11 +64,12 @@ const Details = (props) => {
           Detail(상세페이지)
         </제목>
       </박스>
-      <input onChange={(e)=>{setInputData(e.target.value)}} />
-      {
-        alert===true  ? 재고화면: null
-      }
-     
+      <input
+        onChange={(e) => {
+          setInputData(e.target.value);
+        }}
+      />
+      {alert === true ? 재고화면 : null}
 
       <div className="row">
         <div className="col-md-6">
@@ -72,9 +82,18 @@ const Details = (props) => {
             <p>{찾은상품.content}</p>
             <p>{찾은상품.price}원</p>
             <hr></hr>
-            <button className="btn btn-primary"
-            onClick={()=>{props.재고변경([9,10,11])}}
-            >주문하기</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                props.재고변경([9, 10, 11]);
+                dispatch({ type: "항목추가",
+                 payload: { id: 3, name: '새로운상품', quan: 1 } });
+                 history.push('/cart');
+               //  history.go();
+              }}
+            >
+              주문하기
+            </button>
             <button
               className="btn btn-danger"
               onClick={() => {
@@ -87,7 +106,7 @@ const Details = (props) => {
               className="btn btn-info"
               onClick={() => {
                 history.push("/");
-                history.go();
+             //   history.go();
               }}
             >
               홈으로하기
@@ -96,14 +115,26 @@ const Details = (props) => {
         </DIV>
       </div>
       {/* <Info 재고={props.재고}></Info>       */}
-      <Info 재고={재고}></Info>      
+      <Info 재고={재고}></Info>
+    
+    
     </div>
   );
 };
+
+function Info(props) {
+  return <p>재고 : {props.재고[0]}</p>;
+}
+
+// function stateToProps(state) {
+//   console.log("DETAIL==>");
+//   console.log(state);
+//   return {
+//     state: state.reducer,
+//     alertShow: state.reducer2,
+//   };
+// }
+
 export default Details;
 
-function Info(props){
-  return (
-    <p>재고 : {props.재고[0]}</p>
-  )
-}
+//export default connect(stateToProps)(Details)

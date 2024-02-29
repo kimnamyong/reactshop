@@ -1,10 +1,15 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { connect , useSelector, useDispatch} from "react-redux";
-const Cart = (props) => {
+
+function Cart(props){
 
  let state=useSelector((state)=>state)
  let dispatch=useDispatch();
+
+console.log("cart ==>")
+ console.log(props.state)
+ //console.log(state)
 
   let tableArray = state.reducer.map((a, i) => {
     return (
@@ -17,12 +22,10 @@ const Cart = (props) => {
             onClick={() => {
               dispatch({ type: "수량증가", id: i });
             }}
-          >
-            +
-          </button>
+          > + </button>
           <button
             onClick={() => {
-              dispatch({ type: "수량감소", id: i });
+             dispatch({ type: "수량감소", id: i });
             }}
           >
             -
@@ -50,13 +53,15 @@ const Cart = (props) => {
         </tr>
         {tableArray}
       </Table>
-      {/* {props.alertShow === true ? alert닫기 : null} */}
+      {/* {alertShow === true ? alert닫기 : null}  */}
       {state.reducer2 === true ? alert닫기 : null}
     </div>
   );
 };
 export default Cart;
+
 // function stateToProps(state) {
+//  console.log("statetoProps ==>" );
 //   console.log(state);
 //   return {
 //     state: state.reducer,
