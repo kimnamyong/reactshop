@@ -74,6 +74,78 @@ Redux
 컨텍스트
 부모에서 모든 자식으로 데이터 전달
 
+App->Home->Card
+
+redux 파트만...
+장바구니 기능추가..
+
+클래스문법
+
+npx create-react-app test --template typescript
+
+cd ..  상위디렉토리로 이동
+
+React Code 형태
+
+class 컴포넌트 타입
+function 컴포넌트 타입
+
+Hooks -> 16.8부터 
+2019년 2월 6일 에 출시
+
+cd test
+
+Profile.jsx
+Profile.js
+Profile.tsx
+
+frontend->뷰(Vue)강좌
+->03리액트기초
+===================
+웹퍼블리셔
+html,css,javascript,jquery,sass
+부트스트랩
+====================
+프런트엔드개발자
+javascript, typescript
+react, vue
+node.js
+===================
+백엔드개발자
+java, sql, jsp, servlet, spring
+tomcat 서버
+node.js
+==================
+JSON Server 와 axios
+
+뷰(Vue)리액트(강좌)
+-> 26번게시판
+
+12 JSON Server와 axios.docs
+
+
+test 프로젝트
+students-db.json 
+
+json server 설치
+npm install -g json-server
+cd test
+
+json-server --watch students-db.json
+
+npm install axios
+
+
+index.tsx
+
+
+
+
+
+
+
+
+
 
 
 
