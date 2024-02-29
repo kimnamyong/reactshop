@@ -115,8 +115,7 @@ function Details (props){
         </DIV>
       </div>
       {/* <Info 재고={props.재고}></Info>       */}
-      <Info 재고={재고}></Info>
-    
+      <Info 재고={재고}></Info>   
     
     </div>
   );
