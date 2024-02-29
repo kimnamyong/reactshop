@@ -1,8 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { Connect, connect } from "react-redux";
+import { connect , useSelector, useDispatch} from "react-redux";
 const Cart = (props) => {
-  let tableArray = props.state.map((a, i) => {
+
+ let state=useSelector((state)=>state)
+ let dispatch=useDispatch();
+
+  let tableArray = state.reducer.map((a, i) => {
     return (
       <tr key={i}>
         <td>{a.id}</td>
@@ -11,14 +15,14 @@ const Cart = (props) => {
         <td>
           <button
             onClick={() => {
-              props.dispatch({ type: "수량증가", id: i });
+              dispatch({ type: "수량증가", id: i });
             }}
           >
             +
           </button>
           <button
             onClick={() => {
-              props.dispatch({ type: "수량감소", id: i });
+              dispatch({ type: "수량감소", id: i });
             }}
           >
             -
@@ -31,7 +35,7 @@ const Cart = (props) => {
   let alert닫기 = (
     <div className="my-alert2">
       <p>지금 구매하시면 20% 할인</p>
-      <button onClick={() => props.dispatch({ type: "alert닫기" })}>
+      <button onClick={() => dispatch({ type: "alert닫기" })}>
         닫기
       </button>
     </div>
@@ -46,16 +50,17 @@ const Cart = (props) => {
         </tr>
         {tableArray}
       </Table>
-      {props.alertShow === true ? alert닫기 : null}
+      {/* {props.alertShow === true ? alert닫기 : null} */}
+      {state.reducer2 === true ? alert닫기 : null}
     </div>
   );
 };
-//export default Cart;
-function stateToProps(state) {
-  console.log(state);
-  return {
-    state: state.reducer,
-    alertShow: state.reducer2,
-  };
-}
-export default connect(stateToProps)(Cart);
+export default Cart;
+// function stateToProps(state) {
+//   console.log(state);
+//   return {
+//     state: state.reducer,
+//     alertShow: state.reducer2,
+//   };
+// }
+// export default connect(stateToProps)(Cart);
