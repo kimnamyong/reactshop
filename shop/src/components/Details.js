@@ -64,6 +64,7 @@ function Details (props){
           Detail(상세페이지)
         </제목>
       </박스>
+      <p>{inputData}</p>
       <input
         onChange={(e) => {
           setInputData(e.target.value);

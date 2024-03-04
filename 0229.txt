@@ -76,6 +76,9 @@ index.js
 
 npm install redux react-redux
 
+/////
+05=> 렌더링과 todo앱
+
 
 
 

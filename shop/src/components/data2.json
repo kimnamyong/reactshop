@@ -1,0 +1,20 @@
+[
+  {
+    "id": 13,
+    "title": "Flowey",
+    "content": "only 5 inches",
+    "price": 120000
+  },
+  {
+    "id": 14,
+    "title": "Baby shoes",
+    "content": "for less than 6",
+    "price": 120000
+  },
+  {
+    "id": 15,
+    "title": "Red Herring",
+    "content": "Born in France",
+    "price": 120000
+  }
+]
